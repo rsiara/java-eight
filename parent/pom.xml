@@ -18,6 +18,7 @@
         <module>functional_interface_unaryoperator</module>
         <module>collector_interface</module>
         <module>collector_interface_compact</module>
+        <module>parallel_streams</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
