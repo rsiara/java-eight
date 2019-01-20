@@ -73,7 +73,7 @@ public class CollectorPartitioningTests {
         boolean isPrimeResult = isPrime.apply(21);
         out.println(isPrimeResult);
     }
-
+    
     @Test
     public void partitioning_numbers_for_primes_and_none_primes() {
 
@@ -86,7 +86,6 @@ public class CollectorPartitioningTests {
         Map<Boolean, List<Integer>> primes = IntStream.range(1, lastCandidateNumber)
                 .boxed()
                 .collect(partitioningBy(candidate -> isPrime.apply(candidate)));
-
 
         out.println("Primes : " + primes.get(true));
     }

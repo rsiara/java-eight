@@ -17,6 +17,7 @@
         <module>functional_interface_supplier</module>
         <module>functional_interface_unaryoperator</module>
         <module>collector_interface</module>
+        <module>collector_interface_compact</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

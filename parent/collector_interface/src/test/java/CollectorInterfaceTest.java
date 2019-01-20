@@ -1,3 +1,4 @@
+import collector.CustomPrimeCollector;
 import collector.CustomToListCollector;
 import model.Developer;
 import org.junit.Test;
@@ -26,13 +27,34 @@ public class CollectorInterfaceTest {
             new Developer("Greg", "Mandolo", 6600.00)
     );
 
+    List<Integer> integers = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24);
 
     @Test
-    public void custom_collector_interface_implementation() {
+    public void custom_collector_interface_to_list_implementation() {
 
       String collectionAsStting =  developers.stream()
                .collect(new CustomToListCollector<>());
 
       out.println(collectionAsStting);
+    }
+
+    @Test
+    public void custom_collector_interface_prime_number_implementation() {
+
+        List<Integer> listOfPrimes =  developers.stream()
+                .mapToInt(developer ->(int)developer.getSalary())
+                .boxed()
+                .collect(new CustomPrimeCollector());
+
+        out.println(listOfPrimes);
+    }
+
+    @Test
+    public void custom_collector_interface_prime_number_on_pure_int_stream_implementation() {
+
+        List<Integer> listOfPrimes =  integers.stream()
+                .collect(new CustomPrimeCollector());
+
+        out.println(listOfPrimes);
     }
 }
