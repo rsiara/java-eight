@@ -19,6 +19,7 @@
         <module>collector_interface</module>
         <module>collector_interface_compact</module>
         <module>parallel_streams</module>
+        <module>fork_join_framework</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

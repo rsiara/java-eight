@@ -27,7 +27,7 @@ public class ParallelStreamsOptimizedTest {
     @Test
     public void stream_to_paralleling_simple_test() {
 
-       Long sum = LongStream.rangeClosed(1, 10000)
+       Long sum = LongStream.rangeClosed(1, 5000)
                 .reduce(0L, (a, b) -> a + b);
 
         out.println(sum);
@@ -41,7 +41,7 @@ public class ParallelStreamsOptimizedTest {
 
         long start = System.nanoTime();
 
-        long n = 10000;
+        long n = 5000;
         long sum = 0;
         for (long i = 1L; i <= n; i++) {
             sum += i;
@@ -49,8 +49,8 @@ public class ParallelStreamsOptimizedTest {
 
         long duration =  (System.nanoTime() - start);
 
-        out.println(duration);
-        out.println(sum);
+        out.println("Duration: " + duration + " ns");
+        out.println("Sum: " + sum);
     }
 
     @Test

@@ -39,7 +39,7 @@ public class ParallelStreamsBenchmarkTest {
 
         long start = System.nanoTime();
 
-        long n = 10000;
+        long n = 5000;
         long sum = 0;
         for (long i = 1L; i <= n; i++) {
             sum += i;
@@ -47,7 +47,7 @@ public class ParallelStreamsBenchmarkTest {
 
         long duration =  (System.nanoTime() - start);
 
-        out.println(duration);
+        out.println(duration + " ns");
         out.println(sum);
     }
 
