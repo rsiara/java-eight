@@ -85,7 +85,9 @@ public class CollectorApplicationTests {
 
 /*    The reducing operation takes three parameters:
 
-    identity: Like the Stream.reduce operation, the identity element is both the initial value of the reduction and the default result if there are no elements in the stream. In this example, the identity element is 0; this is the initial value of the sum of ages and the default value if no members exist.
+    identity: Like the Stream.reduce operation, the identity element is both the initial value of the reduction and the default
+     result if there are no elements in the stream. In this example, the identity element is 0;
+      this is the initial value of the sum of ages and the default value if no members exist.
 
     mapper: The reducing operation applies this mapper function to all stream elements. In this example, the mapper retrieves the age of each member.
 
