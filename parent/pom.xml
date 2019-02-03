@@ -21,6 +21,7 @@
         <module>parallel_streams</module>
         <module>fork_join_framework</module>
         <module>spliterator</module>
+        <module>refactor_to_lambdas</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
