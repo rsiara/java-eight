@@ -1,0 +1,2 @@
+To są zasoby z data.txt - Linia pierwsza
+ To są zasoby z data.txt - Druga linia
