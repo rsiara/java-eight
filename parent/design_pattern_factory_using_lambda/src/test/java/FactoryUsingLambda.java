@@ -2,10 +2,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
+import java.util.function.Supplier;
 
 @RunWith(SpringRunner.class)
 public class FactoryUsingLambda {
@@ -17,26 +15,37 @@ public class FactoryUsingLambda {
     Typically you’d create a Factory class with a method that’s responsible for the creation of
     different objects, as shown here:*/
 
+
+    /*Supplier<T> : This is a functional interface and can therefore
+     be used as the assignment target for a lambda expression or method reference.*/
+
     static class CollectionFactory {
+
+        final static Map<String, Supplier<List>> map = new HashMap<>();
+        static {
+            map.put("ArrayList", ArrayList::new);
+            map.put("Vector", Vector::new);
+            map.put("LinkedList", LinkedList::new);
+        }
+
         static List createList(String name) {
-            switch (name) {
-                case "ArrayList":
-                    return new ArrayList<>();
-                case "Vector":
-                    return new Vector();
-                case "LinkedList":
-                    return new LinkedList();
-                default:
-                    throw new RuntimeException("No such collection " + name);
-            }
+
+            Supplier<List> p = map.get(name);
+            if(p != null) return p.get();
+            throw new IllegalArgumentException("No such product " + name);
         }
     }
 
     @Test
-    public void factory_usage_using_lambda() {
+    public void factory_usage_without_lambda() {
 
-        List<String> list = CollectionFactory.createList("ArrayList");
-        list = CollectionFactory.createList("Vector");
-        list = CollectionFactory.createList("LinkedList");
+        List<String> list = FactoryUsingLambdass.CollectionFactory.createList("ArrayList");
+        list.add("Element one");
+        list.add("Element two");
+        list.add("Element three");
+
+        System.out.println(list);
+        list = FactoryUsingLambdass.CollectionFactory.createList("Vector");
+        list = FactoryUsingLambdass.CollectionFactory.createList("LinkedList");
     }
 }
