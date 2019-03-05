@@ -27,6 +27,7 @@
         <module>design_pattern_observer_using_lambda</module>
         <module>design_pattern_chain_of_responsibility_using_lambda</module>
         <module>design_pattern_factory_using_lambda</module>
+        <module>testing_lambdas</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
