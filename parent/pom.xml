@@ -31,6 +31,8 @@
         <module>default_methods_adding_new_method_to_interface</module>
         <module>default_methods_template_design_pattern</module>
         <module>default_methods_resolution_rules</module>
+        <module>optional_patterns_of_adopting</module>
+        <module>method_references</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
